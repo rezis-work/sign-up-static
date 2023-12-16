@@ -6,6 +6,7 @@ export function Sign() {
   const [lastName, setLastName] = useState("");
   const [email, setEmailValid] = useState("");
   const [password, setPassword] = useState("");
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
 
   function handleChangeName(e) {
     e.preventDefault();
@@ -88,8 +89,7 @@ export function Sign() {
               value={email}
               onChange={handleChangeEmail}
             />
-            {(isValid === true && email === "") ||
-            (isValid && !email.includes("@")) ? (
+            {isValid === true && !emailRegex.test(email) ? (
               <>
                 <p className=" mb-[16px] text-right text-[11px] italic text-[#FF7979]">
                   Looks like this is not an email
