@@ -107,7 +107,7 @@ export function Sign() {
               className=" text-[14px] border-[1px] border-[#DEDEDE] mb-[6px] py-[15px] pl-[19px] w-[279px] rounded-[5px] text-[#3D3B48] outline-none xl:w-[460px] "
               placeholder="Password"
               key={43}
-              type="text"
+              type="password"
               value={password}
               onChange={handleChangePassword}
             />
